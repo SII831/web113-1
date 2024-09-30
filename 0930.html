@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>漸層與動畫</title>
+    <style>
+        div {
+            width: 500px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        #d1{
+            background: linear-gradient(90deg,red,white,blue);
+        }
+        #d2{
+            background: linear-gradient(90deg,red 35%,white 35%,white 65%,blue 65%);
+        }
+        #d3{
+            background: repeating-linear-gradient(45deg,blue 20%,white 23%,blue 26%);
+        }
+        #d4 {
+            background: radial-gradient(circle,,white 30%,blue);
+        }
+        #d5 {
+            background: repeating-linear-gradient(white 20%,gray 30%,white 40%);
+        }
+        #d6 {
+            background: conic-gradient(red,yellow,blue,red);
+        }
+        #d7 {
+            background: repeating-conic-gradient(blue 10%,white 15%,blue 20%);
+        }
+        /*動畫*/
+        @keyframes k1 {
+            0% {background: linear-gradient(90deg,red,white,blue);}
+            20% {background: linear-gradient(90deg,red,white,blue);}
+            40% {background: linear-gradient(90deg,red,white,blue);}
+            60% {background: linear-gradient(90deg,red,white,blue);}
+            80% {background: linear-gradient(90deg,red,white,blue);}
+            100% {background: linear-gradient(90deg,red,white,blue);}
+        }
+        #a1 {
+            animation: k1 1s infinite linear;
+        }
+        @keyframes k2 {
+           0% {background: linear-gradient(0deg,red,blue);}
+           12% {background: linear-gradient(0deg,red,blue);}
+           25% {background: linear-gradient(0deg,red,blue);}
+           38% {background: linear-gradient(0deg,red,blue);}
+           50% {background: linear-gradient(0deg,red,blue);}
+           62% {background: linear-gradient(0deg,red,blue);}
+           75% {background: linear-gradient(0deg,red,blue);}
+           88% {background: linear-gradient(0deg,red,blue);}
+           100% {background: linear-gradient(0deg,red,blue);}
+        }
+        #a2 {
+            animation: k2 1s infinite linear;
+        }
+        @keyframes k3 {
+            0% {background: repeating-linear-gradient(45deg,blue 20%,white 23%,blue 26%);}
+            50% {background: repeating-linear-gradient(45deg,white 20%,blue 23%,white 26%);}
+            100% {background: repeating-linear-gradient(45deg,blue 20%,white 23%,blue 26%);}
+        }
+        #a3 {
+            animation: k3 500ms infinite linear;
+        }
+        @keyframes k4 {
+            0%{background: repeating-linear-gradient(white 20%,gray 30%,white 40%);}
+            50%{background: repeating-linear-gradient(gray 20%,white 30%,gray 40%);}
+            100%{background: repeating-linear-gradient(white 20%,gray 30%,white 40%);}
+        }
+        #a4 {
+            animation: k4 500ms infinite linear;
+        }
+        @keyframes k5 {}
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+    <div id="d7"></div>
+    <!--動畫--><hr>
+    <div id="a1"></div>
+    <div id="a2"></div>
+    <div id="a3"></div>
+    <div id="a4"></div>
+    <div id="a5"></div>
+
+
+</body>
+</html>
