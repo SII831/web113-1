@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>1104上課筆記</title>
+    <meta charset="UTF-8">
+    <style>
+        #num () {
+            font-size: 50pt;
+        }
+    </style>
+    <script>
+        t1=0;
+        function get(id) {
+            return document.getElementById(id);
+        }
+        function getRandNum(min,max) {
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        function rollingDice() {
+            dice=getRandNum(1,6);
+            //get("dice").scr="pic/"+getRandNum(1,6)+"png";
+            get("dice").src=`pic/${dice}.png`;
+            h=getRandNum(0,360);
+            get("msg").style.color=`rgb(${h},80%,30%)`;
+        }
+        function abc() {
+            console.log("a");
+        }
+        function startInterval () {
+            if(t1==0) {
+            t1=setInterval(abc,500);
+            setTimeout(stopInterval,3000);
+            get("msg").innerHTML="擲殼中..."
+        }
+        }
+        function startInterval () {
+            clearInterval(t1);
+            t1=0;
+            get("msg").innerHTML="你得到"+dice+"點!"
+        }
+    </script>
+</head>
+<body>
+    <button onclick="startInterval();">開始</button>
+    <button onclick="stopInterval();">結束</button>
+    <hr>
+    <img id="dice" src="pic/0.png">
+    <div id="msg"></div>
+</body>
+</html>
