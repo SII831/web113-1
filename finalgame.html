@@ -5,7 +5,6 @@
     <style>
         #worldmaze {
             background: url("pic/maze.jpg");
-            background-size: 260px 208px;
             width: 800px;
             height: 800px;
         }
@@ -13,9 +12,37 @@
             0% {background-position-x: 0px;}
             100% {background-position-x: -144px;}
         }
+        #role {
+            background-image: url("pic/sprite1.png");
+            width: 48px;
+            height: 72px;
+            position: absolute;
+            left: 376px;
+            top: 364px;
+            animation: role1walk 1s steps(3) infinite paused;
+        }
     </style>
+    <script>
+    function get(id) {
+        return document.getElementById(id);
+    }
+    function mykeydown() {
+        event.preventDefault();
+        var bgPY={"ArrowUp":"-216px","ArrowDown":"0px","ArrowLeft":"-72px","ArrowRight":"-144px"};
+        get("role").style.backgroundPositionY=bgPY[event.key];
+        dir[event.key]=1;
+        get("role").style.animationPlayState="running";          
+    }
+    function mykeyup() {
+        event.preventDefault();
+        dir[event.key]=0;
+        get("role").style.animationPlayState="paused";
+    }
+    </script>
 </head>
 <body>
-    <div id="worldmaze"></div>
+    <div id="worldmaze">
+        <div id="role"></div>
+    </div>
 </body>
 </html>
