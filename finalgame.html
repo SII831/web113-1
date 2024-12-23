@@ -8,15 +8,19 @@
             width: 700px;
             height: 737px;
         }
-        @keyframes role1walk {
-            0% {background-position-x: 0px;}
-            100% {background-position-x: -144px;}
+        #player {
+           position: absolute;
+           width: 20px;
+           height: 20px;
+           background-color: blue;
+           top: 10px;
+           left: 10px;
         }
-        #role {
-            border-radius: 50px;
-            border-color: blue;
-            width: 100px;
-            height: 100px;
+        #maze-container{
+            position: relative;
+            width: 700px;
+            height: 737px;
+            border: 2px solid black;
         }
     </style>
     <script>
@@ -32,7 +36,7 @@
 </head>
 <body>
     <div id="maze">
-        <div id="role"></div>
+        <div id="player"></div>
     </div>
 </body>
 </html>
