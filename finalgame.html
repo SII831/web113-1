@@ -13,23 +13,15 @@
             100% {background-position-x: -144px;}
         }
         #role {
-            background-image: url("pic/Red.png");
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            animation: role1walk 1s steps(3) infinite paused;
+            border-radius: 50px;
+            border-color: blue;
+            width: 100px;
+            height: 100px;
         }
     </style>
     <script>
     function get(id) {
         return document.getElementById(id);
-    }
-    function mykeydown() {
-        event.preventDefault();
-        var bgPY={"ArrowUp":"-216px","ArrowDown":"0px","ArrowLeft":"-72px","ArrowRight":"-144px"};
-        get("role").style.backgroundPositionY=bgPY[event.key];
-        dir[event.key]=1;
-        get("role").style.animationPlayState="running";          
     }
     function mykeyup() {
         event.preventDefault();
