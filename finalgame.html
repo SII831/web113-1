@@ -18,14 +18,51 @@
         }
     </style>
     <script>
-    function get(id) {
-        return document.getElementById(id);
-    }
-    function mykeyup() {
-        event.preventDefault();
-        dir[event.key]=0;
-        get("role").style.animationPlayState="paused";
-    }
+        var player=document.getElementById("player");
+        var walls=document.querySelectorAll(".wall");
+        var maze=document.getElementById("maze");
+        var playerX =17;
+        var playerY =44;
+        function moveplayer (dx,dy) {
+            playerX+=dx;
+            playerY+=dy;
+            player.style.left=playerX+"px";
+            player.style.top=playerY+"px";
+            if(checkCollision()) {
+                alert("你撞到牆壁了!");
+                resetPlayer();
+            }
+        }
+        function resetPlayer() {
+            playerX=17;
+            playerY=44;
+            player.style.left=playerX+"px";
+            player.style.top=playerY+"px";
+        }
+        function checkCollision() {
+            var playerRect=player.getBoundingClienRect();
+            for (var i=0; i<walls.length; i++) {
+                var wallRect=walls[i].getBoundingClientRect();
+                if (
+                    playerRect.left<wallRect.right && playerRect.right>wallRect.left && playerRect.top<wallRect.bottom && playerRect.bottom>wallRect.top
+                ) {
+                    return true;
+                }
+                return false;
+            }
+        }
+        document.addEventListener("keydown",
+            function (event) {
+                if (event.key =="ArrowUp") {
+                    moveplayer(0,-10);
+                } else if (event.key =="ArrowDown") {
+                    moveplayer(0,10);
+                } else if (event.key =="ArrowLeft") {
+                    moveplayer(-10,0);
+                } else if (event.key =="ArrowRight") {
+                    moveplayer(10,0);
+                }
+            });
     </script>
 </head>
 <body>
