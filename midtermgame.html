@@ -25,10 +25,48 @@
                 height: 0;
                 transform: rotate(180deg);
             }
+            .tree {
+                position: relative;
+                width: 0;
+                height: 0;
+            }
+            .triangle {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-bottom: 80px solid lawngreen;
+            }
+            .triangle:nth-child(2) {
+                top: 40px;
+                border-bottom: 90px solid green;
+            }
+            .trunk {
+                position: absolute;
+                top: 140px;
+                left: 50%;
+                width: 30px;
+                height: 40px;
+                background-color: saddlebrown;
+                transform: translateX(-50%);
+            }
+            .star {
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 24px;
+                color: gold;
+            }
         </style>       
     </head>
     <body>
         <div id="d1"></div>
         <div id="d2"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="star"></div>
+        <div class="trunk"></div>
     </body>
 </html>
